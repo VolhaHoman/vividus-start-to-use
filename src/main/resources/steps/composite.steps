@@ -1,0 +1,14 @@
+Composite: When I fill $firstName, $lastName, $email and $password in the registration form
+When I enter '<firstName>' in a field by the xpath '//input[@id='first-name-su']'
+When I enter '<lastName>' in a field by the xpath '//input[@id='last-name-su']'
+When I enter '<email>' in a field by the xpath '//input[@id='email-su']'
+When I enter '<password>' in a field by the xpath '//input[@id='password-su']'
+
+
+Composite: When I submit the registration form
+When I click on a button with the name 'Create Account'
+When I change context to the page
+
+
+Composite: When I select a random product
+When I click on an element by the xpath '//div[@class='search-result-listview-item Grid'][#{randomInt(1, 20)}]//a'
