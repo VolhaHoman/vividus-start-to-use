@@ -2,14 +2,13 @@ Description: Account creation
 
 Scenario: Open reddit.com main page
 Meta:
-   @test
+   @testReddit
 Given I am on the main application page
 
 Scenario: Create user account
 Meta:
-   @test
+   @testReddit
 When I refresh the page
-!-- When I decline an action in an alert with the message 'www.reddit.com wants to Show notifications'
 When I click on element located `By.xpath(//a[text()='sign up'])`
 When I switch to a frame by the xpath '//iframe[contains(@src,'actionSource')]'
 When I change context to an element by the xpath '//div[@class='Container']'

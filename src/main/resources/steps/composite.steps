@@ -17,3 +17,8 @@ When I click on an element by the xpath '//div[@class='search-result-listview-it
 Composite: When I select a random username
 When I change context to an element by By.xpath(//div[contains(@class,'usernameWrapper')])
 When I click on an element by the xpath '//a[contains(@class,'usernameSuggestion')][#{randomInt(1, 5)}]'
+
+
+Composite: When I select a random post
+When I change context to an element by the xpath '//div[contains(@class,'PaJBYLqPf')]'
+When I click on an element by the xpath '(//div[contains(@class,'scrollerItem Post')]//a)[#{randomInt(1, 150)}]'
