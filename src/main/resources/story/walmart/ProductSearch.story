@@ -9,7 +9,6 @@ Scenario: Perform product search
 Meta:
    @test
 When I change context to an element by the xpath '//form[@id='global-search-form']'
-!-- When I select '<departmentStore>' from a drop down by the xpath '//button[@id='global-search-dropdown-toggle']' (not a dropdown but a button)
 When I enter '<toyName>' in a field by the xpath '//input[contains(@class,'GlobalSearch-input')]'
 When I click on an element by the xpath '//button[@id='global-search-submit']'
 Then an element by the xpath '//a[@id='povActive']' exists
