@@ -24,7 +24,7 @@ When I ${visualTestingAction} baseline with name '${UnauthUserBaseline}'
 Scenario: Fill in the registration form
 Meta:
    @test
-!-- How to make composite.steps work?   
+!-- How to make composite.steps work?
 When I enter '<firstName>' in a field by the xpath '//input[@id='first-name-su']'
 When I enter '<lastName>' in a field by the xpath '//input[@id='last-name-su']'
 When I enter '<email>' in a field by the xpath '//input[@id='email-su']'
