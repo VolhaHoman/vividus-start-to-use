@@ -1,4 +1,4 @@
-Composite: When I fill $firstName, $lastName, $email and $password in the registration form
+Composite: When I fill '$firstName', '$lastName', '$email' and '$password' in the registration form
 When I enter '<firstName>' in a field by the xpath '//input[@id='first-name-su']'
 When I enter '<lastName>' in a field by the xpath '//input[@id='last-name-su']'
 When I enter '<email>' in a field by the xpath '//input[@id='email-su']'
@@ -12,3 +12,84 @@ When I change context to the page
 
 Composite: When I select a random product
 When I click on an element by the xpath '//div[@class='search-result-listview-item Grid'][#{randomInt(1, 20)}]//a'
+
+
+Composite: When I select a random username
+When I change context to an element by By.xpath(//div[contains(@class,'usernameWrapper')])
+When I click on an element by the xpath '//a[contains(@class,'usernameSuggestion')][#{randomInt(1, 5)}]'
+
+
+Composite: When I select a random post
+When I change context to an element by the xpath '//div[contains(@class,'PaJBYLqPf')]'
+When I click on an element by the xpath '(//div[contains(@class,'scrollerItem Post')]//a)[#{randomInt(1, 150)}]'
+
+
+Composite: When I create IMDb account and enter '$name', '$email', '$password' and re-enter '$password'
+When I click on a link with the text 'Sign In'
+When I change context to the page
+When I click on an element by the xpath '//a[contains(@class,'create-account')]'
+When I change context to an element by the xpath '//div[@class='a-box-inner']'
+When I enter '<name>' in a field by the xpath '//input[@id='ap_customer_name']'
+When I enter '<email>' in a field by the xpath '//input[@id='ap_email']'
+When I enter '<password>' in a field by the xpath '//input[@id='ap_password']'
+When I enter '<password>' in a field by the xpath '//input[@id='ap_password_check']'
+When I click on an element by the xpath '//input[@id='continue']'
+
+
+Composite: Then a new account exists
+Then at least one element by the xpath '//span[contains(@class,'user-menu-toggle')]' exists
+
+
+Composite: When I perform search for movie by search box
+When I change context to an element by By.xpath(//input[@id='suggestion-search'])
+When I enter '<filmName>' in a field by the xpath '//input[@id='suggestion-search']'
+When I set focus to the context element
+When I press ENTER on keyboard
+When I change context to the page
+
+
+Composite: Then the list of movies exists
+When I wait until element located `By.xpath(//h1[@class='findHeader'])` contains text '<filmName>'
+Then the text 'Results for' exists
+
+
+Composite: When I click on a link of a found movie
+When I change context to an element by By.xpath(//div[@class='article'])
+When I click on an element by the xpath '(//a[text()='Frozen'])[1]'
+
+
+Composite: Then the page with movie description opens
+Then the page title contains the text '<filmName>'
+
+
+Composite: When I add a chosen movie to Watchlist
+When I change context to an element by By.xpath(//div[@class='titleBar'])
+When I click on an element by the xpath '//button[contains(@class,'add watchlist--title-main-desktop')]'
+
+
+Composite: Then the movie is added
+Then an element by the xpath '//div[@class='ipc-button__text' and contains(text(),'Added to Watchlist')]' exists
+
+
+Composite: When I navigate to Watchlist
+When I change context to an element by By.xpath(//nav[@id='imdbHeader'])
+When I click on element located `By.xpath(//div[contains(text(),'Watchlist')]/parent::a)`
+When I change context to the page
+
+
+Composite: Then the list of saved movies exists
+Then the page title contains the text 'Your Watchlist'
+
+
+Composite: When I sort the list of movies in Watchlist
+When I change context to an element by By.xpath(//div[@class='lister-controls'])
+When I select `<listOrder>` from drop down located `By.xpath(//select[@id='lister-sort-by-options'])`
+
+
+Composite: Then the moves are sorted
+Then the value '<value>' is selected in a slider by the xpath '//select[@id='lister-sort-by-options']'
+
+
+Composite: When I export the list of movies in a file
+When I change context to an element by By.xpath(//div[@class='export'])
+When I click on a link with the text 'Export this list'
