@@ -24,7 +24,6 @@ When I ${visualTestingAction} baseline with name '${UnauthUserBaseline}'
 Scenario: Fill in the registration form
 Meta:
    @testWalmart
-!-- How to make composite.steps work?
 When I enter '<firstName>' in a field by the xpath '//input[@id='first-name-su']'
 When I enter '<lastName>' in a field by the xpath '//input[@id='last-name-su']'
 When I enter '<email>' in a field by the xpath '//input[@id='email-su']'
@@ -34,7 +33,7 @@ When I find >= `0` elements by `By.xpath(//div[@class='captcha re-captcha']) and
 |step                                                                               |
 |When I change context to an element by the xpath '//div[@id='rc-anchor-container']'|
 |When I check a checkbox                                                            |
-!-- |-- HOW TO KILL CAPTCHA???                                                      |
+!-- CAPTCHA
 When I change context to the page
 Then the text 'Your Account' exists
 Examples:
