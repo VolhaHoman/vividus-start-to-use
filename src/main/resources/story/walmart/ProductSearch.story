@@ -19,6 +19,7 @@ Examples:
 Scenario: Open product page for product from Search results
 Meta:
    @test
+!-- Composite: When I select a random product
 When I click on an element by the xpath '(//a[contains(@class,'product-title-link')])[#{randomInt(1, 20)}]'
 Then an element by the xpath '//h1[@class='prod-ProductTitle font-normal']' exists
 

@@ -24,11 +24,14 @@ When I ${visualTestingAction} baseline with name '${UnauthUserBaseline}'
 Scenario: Fill in the registration form
 Meta:
    @test
-!-- How to make composite.steps work?   
+!-- How to make composite.steps work?
+!-- Composite: When I fill <firstName>, <lastName>, <email> and <password> in the registration form
 When I enter '<firstName>' in a field by the xpath '//input[@id='first-name-su']'
 When I enter '<lastName>' in a field by the xpath '//input[@id='last-name-su']'
 When I enter '<email>' in a field by the xpath '//input[@id='email-su']'
 When I enter '<password>' in a field by the xpath '//input[@id='password-su']'
+!-- The expressions are not highlighted, is it ok?
+!-- Composite: When I submit the registration form
 When I click on a button with the name 'Create Account'
 When I find >= `0` elements by `By.xpath(//div[@class='captcha re-captcha']) and for each element do
 |step                                                                               |
