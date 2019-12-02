@@ -2,12 +2,12 @@ Description: Account creation
 
 Scenario: Open walmart.com main page
 Meta:
-   @test
+   @testWalmart
 Given I am on the main application page
 
 Scenario: Create user account
 Meta:
-   @test
+   @testWalmart
 When I click on element located `By.id(header-account-toggle)`
 When I change context to the page
 When I click on element located `By.xpath(//div[text()='Create Account'])`
@@ -15,7 +15,7 @@ Then the text 'Create your Walmart account' exists
 
 Scenario: Validation of mandatory fields on sign-up form
 Meta:
-   @test
+   @testWalmart
    @skip
 When I change context to an element by the xpath '//div[@id='sign-in-widget']'
 When I click on a button with the name 'Create Account'
@@ -23,7 +23,7 @@ When I ${visualTestingAction} baseline with name '${UnauthUserBaseline}'
 
 Scenario: Fill in the registration form
 Meta:
-   @test
+   @testWalmart
 When I enter '<firstName>' in a field by the xpath '//input[@id='first-name-su']'
 When I enter '<lastName>' in a field by the xpath '//input[@id='last-name-su']'
 When I enter '<email>' in a field by the xpath '//input[@id='email-su']'

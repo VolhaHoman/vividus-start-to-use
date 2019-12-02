@@ -93,3 +93,4 @@ Then the value '<value>' is selected in a slider by the xpath '//select[@id='lis
 Composite: When I export the list of movies in a file
 When I change context to an element by By.xpath(//div[@class='export'])
 When I click on a link with the text 'Export this list'
+When I click on an element by the xpath '(//div[contains(@class,'scrollerItem Post')]//a)[#{randomInt(1, 150)}]'
