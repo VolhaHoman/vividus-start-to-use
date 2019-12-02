@@ -1,0 +1,2 @@
+|name                      |email                              |password                                |filmName |listOrder |value   |
+|#{generate(Name.username)}|#{generate(Internet.emailAddress)} |#{generate(Internet.password '8','12')} |Frozen   |Runtime   |RUNTIME |
